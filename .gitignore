@@ -1,7 +1,14 @@
-.env
-.DS_Store
 node_modules/
 dist/
-scraped/
+*.local
+*.log
+.env
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# тяжёлые исходники, не храним в git
 *.pdf
-site/public/docs/
+design/scraped/
+.vercel
