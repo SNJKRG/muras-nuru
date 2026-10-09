@@ -506,3 +506,10 @@ dialog::backdrop { background: rgba(24, 32, 41, .42); }
 .site-footer .logo { background: transparent; border: 1px solid rgba(188, 163, 123, .55); }
 .site-footer :focus-visible { outline-color: #fff; }
 @media (max-width: 767px) { .form.form--compact { padding: 0; } }
+
+/* угловой орнамент: точечно, в трёх местах */
+.heritage::after, #purchase::after, .contact .form::after { content: ''; position: absolute; width: clamp(120px, 16vw, 230px); aspect-ratio: 480 / 477; background: url(/img/orn/corner.webp) center / contain no-repeat; pointer-events: none; }
+.heritage::after { top: 28px; right: 28px; transform: scaleX(-1); }
+@media (max-width: 767px) { .heritage::after, #purchase::after { width: 88px; } .heritage::after { top: 12px; right: 12px; } #purchase::after { bottom: 12px; right: 12px; } }
+#purchase::after { bottom: 28px; right: 28px; transform: rotate(180deg); }
+.contact .form::after { top: 12px; right: 12px; width: 96px; transform: scaleX(-1); opacity: .8; }
