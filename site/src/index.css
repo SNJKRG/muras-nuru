@@ -253,7 +253,7 @@ dialog::backdrop { background: rgba(24, 32, 41, .42); }
 .cluster dd { margin: 4px 0 0; font-size: 16px; line-height: 24px; }
 @media (max-width: 1023px) {
   .comfort { grid-template-columns: 1fr; gap: 24px; }
-  .comfort__art { position: static; max-width: 300px; }
+  .comfort__art { position: relative; top: auto; max-width: 300px; }
   .cluster { grid-template-columns: 1fr; gap: 16px; }
 }
 @media (max-width: 479px) { .cluster dl { grid-template-columns: 1fr; gap: 14px; } }
@@ -507,9 +507,8 @@ dialog::backdrop { background: rgba(24, 32, 41, .42); }
 .site-footer :focus-visible { outline-color: #fff; }
 @media (max-width: 767px) { .form.form--compact { padding: 0; } }
 
-/* угловой орнамент: точечно, в трёх местах */
-.heritage::after, #purchase::after, .contact .form::after { content: ''; position: absolute; width: clamp(120px, 16vw, 230px); aspect-ratio: 480 / 477; background: url(/img/orn/corner.webp) center / contain no-repeat; pointer-events: none; }
-.heritage::after { top: 28px; right: 28px; transform: scaleX(-1); }
-@media (max-width: 767px) { .heritage::after, #purchase::after { width: 88px; } .heritage::after { top: 12px; right: 12px; } #purchase::after { bottom: 12px; right: 12px; } }
-#purchase::after { bottom: 28px; right: 28px; transform: rotate(180deg); }
+/* угловой орнамент: только на белом, где другого орнамента нет */
+.comfort__art::before, .comfort__art::after, .contact .form::after { content: ''; position: absolute; width: 110px; aspect-ratio: 480 / 477; background: url(/img/orn/corner.webp) center / contain no-repeat; pointer-events: none; }
+.comfort__art::before { top: -16px; left: -16px; }
+.comfort__art::after { bottom: -16px; right: -16px; transform: rotate(180deg); }
 .contact .form::after { top: 12px; right: 12px; width: 96px; transform: scaleX(-1); opacity: .8; }
