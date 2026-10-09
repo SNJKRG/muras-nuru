@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "assets": [
+    {
+      "id": "mountains",
+      "path": "assets/art/ala-too-gouache.png",
+      "role": "painted mountain cutout",
+      "status": "available_style_reference",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 1622686,
+      "source_original_preserved": true,
+      "width": 2135,
+      "height": 736,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "children",
+      "path": "assets/art/children-gouache.png",
+      "role": "desktop heritage cutout",
+      "status": "available_style_reference",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 2251827,
+      "source_original_preserved": true,
+      "width": 1983,
+      "height": 793,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "children_mobile",
+      "path": "assets/art/children-mobile-proposal.png",
+      "role": "mobile heritage cutout",
+      "status": "designer_proposal",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 2013055,
+      "source_original_preserved": true,
+      "width": 1448,
+      "height": 1086,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "eagle",
+      "path": "assets/reference-only/eagle-rejected-preview.png",
+      "role": "static contact art",
+      "status": "rejected_visual_preview_glow_and_overdetail",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 1904737,
+      "source_original_preserved": true,
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "restrictions": "Не использовать в работающем интерфейсе: видимый цветной ореол и слишком мелкая фактура. Нужен чистый силуэт. Пока — обычная подписанная кнопка «Задать вопрос», художественный знак не заменяет связь."
+    },
+    {
+      "id": "architecture_preview",
+      "path": "assets/reference-only/architecture-cutout-preview.png",
+      "role": "hero arrangement only",
+      "status": "generative_architecture_not_fact",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 2389179,
+      "source_original_preserved": true,
+      "width": 2018,
+      "height": 779,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "restrictions": "Нельзя публиковать как достоверную архитектуру; только внутренний preview с явной маркировкой. Использовать исходную страницу каталога как безопасную временную замену."
+    },
+    {
+      "id": "architecture_source_page",
+      "path": "assets/catalog-pages/stage3-page07-architecture.jpg",
+      "role": "unaltered source catalog page",
+      "status": "source_page_not_clean_hero_asset",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 307655,
+      "source_original_preserved": true,
+      "width": 1241,
+      "height": 2200,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "plan_source_page",
+      "path": "assets/catalog-pages/stage3-page13-plan.jpg",
+      "role": "verified plan type catalog page",
+      "status": "preview_only_replace_with_clean_plan",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 179194,
+      "source_original_preserved": true,
+      "width": 1015,
+      "height": 1800,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "logo_project",
+      "path": "assets/project-originals/umensh-logo-muras-nuru.png",
+      "role": "original project logo",
+      "status": "original_raster_white_lettering_use_green_tile",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 44421,
+      "source_original_preserved": true,
+      "width": 655,
+      "height": 430,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "logo_developer",
+      "path": "assets/project-originals/nurzaman-logo.png",
+      "role": "original developer logo",
+      "status": "original_raster_check_contrast",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 3774,
+      "source_original_preserved": true,
+      "width": 201,
+      "height": 41,
+      "mode": "P",
+      "has_alpha": false
+    },
+    {
+      "id": "site_architecture",
+      "path": "assets/project-originals/91af2d77e0b7c1ce7d69cf6194bb0a72d47ec5e9-1-scaled.jpg",
+      "role": "site project render",
+      "status": "stage_requires_review",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 1101931,
+      "source_original_preserved": true,
+      "width": 2560,
+      "height": 1440,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "site_boulevard",
+      "path": "assets/project-originals/muras-nuru-slajder-2-1.png",
+      "role": "boulevard source image",
+      "status": "stage_requires_review",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 262691,
+      "source_original_preserved": true,
+      "width": 716,
+      "height": 594,
+      "mode": "P",
+      "has_alpha": false
+    },
+    {
+      "id": "site_courtyard",
+      "path": "assets/project-originals/764ee4de5f26879ae5e54482e9118b3f75577ddd-scaled.jpg",
+      "role": "courtyard source image",
+      "status": "stage_requires_review",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 1067995,
+      "source_original_preserved": true,
+      "width": 2560,
+      "height": 1440,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "site_lobby",
+      "path": "assets/project-originals/mask-group-2-1.png",
+      "role": "lobby source image",
+      "status": "stage_requires_review",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 223907,
+      "source_original_preserved": true,
+      "width": 660,
+      "height": 588,
+      "mode": "P",
+      "has_alpha": false
+    },
+    {
+      "id": "brand_advantages",
+      "path": "assets/brand/ref-icons-advantages-35.jpg",
+      "role": "brand/ornament reference",
+      "status": "reference_not_vector",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 121435,
+      "source_original_preserved": true,
+      "width": 733,
+      "height": 1300,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "map_reference",
+      "path": "assets/catalog-pages/stage2-page05-reference.jpg",
+      "role": "catalog location source",
+      "status": "reference_not_live_verified_map",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 129571,
+      "source_original_preserved": true,
+      "width": 902,
+      "height": 1600,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "id": "catalog1",
+      "path": "sources/catalogs/muras-nuru-final.pdf",
+      "role": "stage1 PDF",
+      "status": "original_catalog",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 137671403,
+      "source_original_preserved": true
+    },
+    {
+      "id": "catalog2",
+      "path": "sources/catalogs/katalog-muras-nuru_2-etap.pdf",
+      "role": "stage2 PDF",
+      "status": "original_catalog",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 38136190,
+      "source_original_preserved": true
+    },
+    {
+      "id": "catalog3",
+      "path": "sources/catalogs/muras-nuru_3-etap_wa.pdf",
+      "role": "stage3 PDF",
+      "status": "original_catalog",
+      "eligible_for_public_use_after_owner_review": true,
+      "bytes": 38993686,
+      "source_original_preserved": true
+    },
+    {
+      "id": "site_plans",
+      "path": "assets/project-originals/1-1.png",
+      "role": "legacy unlabelled plan example",
+      "status": "not_verified_do_not_infer_area",
+      "eligible_for_public_use_after_owner_review": false,
+      "bytes": 97931,
+      "source_original_preserved": true,
+      "width": 820,
+      "height": 573,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    }
+  ],
+  "all_originals_directory": "assets/project-originals",
+  "policy": "Флаг eligible не подтверждает актуальность продажи, строительную готовность или права сверх предоставленных владельцем материалов."
+}

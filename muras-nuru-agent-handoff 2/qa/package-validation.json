@@ -1,0 +1,487 @@
+{
+  "performed": "2026-10-09",
+  "scope": "archive integrity and specification consistency, not website tests",
+  "errors": [],
+  "checks": [
+    {
+      "check": "JSON parsed: spec/sources.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/project.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/gouache-style.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/asset-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/apartments.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/project.schema.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/content-gaps.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: spec/design-tokens.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: prompts/packaging-visual-prompts.json",
+      "passed": true
+    },
+    {
+      "check": "JSON parsed: sources/context/previous-assistant-style.json",
+      "passed": true
+    },
+    {
+      "check": "project.json conforms to project.schema.json",
+      "passed": true
+    },
+    {
+      "check": "16 unique content section IDs",
+      "passed": true
+    },
+    {
+      "check": "section sequence 1 through 16",
+      "passed": true
+    },
+    {
+      "check": "source IDs: hero",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: hero",
+      "passed": true
+    },
+    {
+      "check": "CTA target hero → apartments",
+      "passed": true
+    },
+    {
+      "check": "source IDs: overview",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: overview",
+      "passed": true
+    },
+    {
+      "check": "CTA target overview → documents",
+      "passed": true
+    },
+    {
+      "check": "source IDs: architecture",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: architecture",
+      "passed": true
+    },
+    {
+      "check": "source IDs: courtyard",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: courtyard",
+      "passed": true
+    },
+    {
+      "check": "CTA target courtyard → location",
+      "passed": true
+    },
+    {
+      "check": "source IDs: heritage",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: heritage",
+      "passed": true
+    },
+    {
+      "check": "CTA target heritage → courtyard",
+      "passed": true
+    },
+    {
+      "check": "source IDs: lobbies",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: lobbies",
+      "passed": true
+    },
+    {
+      "check": "source IDs: comfort",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: comfort",
+      "passed": true
+    },
+    {
+      "check": "source IDs: terraces",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: terraces",
+      "passed": true
+    },
+    {
+      "check": "CTA target terraces → apartments",
+      "passed": true
+    },
+    {
+      "check": "source IDs: apartments",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: apartments",
+      "passed": true
+    },
+    {
+      "check": "source IDs: location",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: location",
+      "passed": true
+    },
+    {
+      "check": "source IDs: purchase",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: purchase",
+      "passed": true
+    },
+    {
+      "check": "source IDs: construction",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: construction",
+      "passed": true
+    },
+    {
+      "check": "source IDs: developer",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: developer",
+      "passed": true
+    },
+    {
+      "check": "source IDs: documents",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: documents",
+      "passed": true
+    },
+    {
+      "check": "source IDs: faq",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: faq",
+      "passed": true
+    },
+    {
+      "check": "source IDs: contact",
+      "passed": true
+    },
+    {
+      "check": "asset IDs: contact",
+      "passed": true
+    },
+    {
+      "check": "navigation target: overview",
+      "passed": true
+    },
+    {
+      "check": "navigation target: apartments",
+      "passed": true
+    },
+    {
+      "check": "navigation target: location",
+      "passed": true
+    },
+    {
+      "check": "navigation target: purchase",
+      "passed": true
+    },
+    {
+      "check": "navigation target: contact",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/design-tokens.json",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/gouache-style.json",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/sources.json",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/asset-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/apartments.json",
+      "passed": true
+    },
+    {
+      "check": "portable spec file: spec/content-gaps.json",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/art/ala-too-gouache.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/art/children-gouache.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/art/children-mobile-proposal.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/reference-only/eagle-rejected-preview.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/reference-only/architecture-cutout-preview.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/catalog-pages/stage3-page07-architecture.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/catalog-pages/stage3-page13-plan.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/umensh-logo-muras-nuru.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/nurzaman-logo.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/91af2d77e0b7c1ce7d69cf6194bb0a72d47ec5e9-1-scaled.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/muras-nuru-slajder-2-1.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/764ee4de5f26879ae5e54482e9118b3f75577ddd-scaled.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/mask-group-2-1.png",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/brand/ref-icons-advantages-35.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/catalog-pages/stage2-page05-reference.jpg",
+      "passed": true
+    },
+    {
+      "check": "asset path: sources/catalogs/muras-nuru-final.pdf",
+      "passed": true
+    },
+    {
+      "check": "asset path: sources/catalogs/katalog-muras-nuru_2-etap.pdf",
+      "passed": true
+    },
+    {
+      "check": "asset path: sources/catalogs/muras-nuru_3-etap_wa.pdf",
+      "passed": true
+    },
+    {
+      "check": "asset path: assets/project-originals/1-1.png",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/project/CONTENT.md",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/project/BRAND.md",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/project/original-page.html",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/catalogs/muras-nuru-final.pdf",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/catalogs/katalog-muras-nuru_2-etap.pdf",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/catalogs/muras-nuru_3-etap_wa.pdf",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/context/audio-transcript.md",
+      "passed": true
+    },
+    {
+      "check": "source path: sources/context/style-chat-extract.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: brief/components-and-motion.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: brief/design-system.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: brief/full-landing.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: brief/art-direction-passport.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/sources.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/project.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/gouache-style.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/asset-manifest.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/apartments.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/project.schema.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/content-gaps.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: spec/design-tokens.json",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: prompts/asset-briefs.md",
+      "passed": true
+    },
+    {
+      "check": "no machine-specific absolute paths: prompts/packaging-visual-prompts.json",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → art-direction-passport.md",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → ../references/visual/design-system-white.png",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → ../references/visual/mobile-A-B-white.png",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → ../prompts/packaging-visual-prompts.json",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → full-landing.md",
+      "passed": true
+    },
+    {
+      "check": "markdown link: brief/design-system.md → ../spec/project.json",
+      "passed": true
+    },
+    {
+      "check": "PDF opens: muras-nuru-final.pdf",
+      "passed": true
+    },
+    {
+      "check": "PDF first-page render: muras-nuru-final.pdf",
+      "passed": true
+    },
+    {
+      "check": "PDF opens: katalog-muras-nuru_2-etap.pdf",
+      "passed": true
+    },
+    {
+      "check": "PDF first-page render: katalog-muras-nuru_2-etap.pdf",
+      "passed": true
+    },
+    {
+      "check": "PDF opens: muras-nuru_3-etap_wa.pdf",
+      "passed": true
+    },
+    {
+      "check": "PDF first-page render: muras-nuru_3-etap_wa.pdf",
+      "passed": true
+    },
+    {
+      "check": "true alpha: ala-too-gouache.png",
+      "passed": true
+    },
+    {
+      "check": "true alpha: children-mobile-proposal.png",
+      "passed": true
+    },
+    {
+      "check": "true alpha: children-gouache.png",
+      "passed": true
+    },
+    {
+      "check": "superseded beige boards excluded",
+      "passed": true
+    },
+    {
+      "check": "failed eagle excluded from active artwork",
+      "passed": true
+    },
+    {
+      "check": "full-landing.md matches all project sections",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "records_are": "catalog_plan_types_not_live_inventory",
+  "price_policy": "null until verified current data",
+  "items": [
+    {
+      "id": "stage3-3room-terrace-11180",
+      "stage": 3,
+      "label": "3-комнатная с террасой",
+      "rooms": 3,
+      "floor": 1,
+      "blocks": [
+        10,
+        12,
+        14,
+        16
+      ],
+      "apartment_area_m2": 111.8,
+      "area_including_terrace_m2": 146.43,
+      "terrace": true,
+      "price": null,
+      "currency": null,
+      "availability": "unknown",
+      "source_id": "catalog_stage3",
+      "source_page": 13,
+      "verification": "visually_checked_against_catalog_page",
+      "image_asset_id": "plan_source_page",
+      "public_sales_inventory": false
+    }
+  ],
+  "unverified_extra_records": "Сводные площади в sources/project/CONTENT.md не включены как готовый ассортимент. Агент может дополнить только после сверки каждой страницы PDF."
+}

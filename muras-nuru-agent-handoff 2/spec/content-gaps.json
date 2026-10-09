@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "items": [
+    {
+      "id": "architecture_master",
+      "needed": "Точный cutout архитектуры третьего этапа без изменения фасадов",
+      "section": "hero",
+      "fallback": "page_source_for_internal_preview",
+      "blocks": "hero_publication",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "clean_plans",
+      "needed": "Чистые планы и сверенный полный ассортимент по этапам",
+      "section": "apartments",
+      "fallback": "one_verified_catalog_type",
+      "blocks": "full_catalog_publication",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "prices_availability",
+      "needed": "Актуальные цены и наличие с датой",
+      "section": "apartments / purchase",
+      "fallback": "consultation_no_numbers",
+      "blocks": "sales_claims",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "map_address",
+      "needed": "Адрес объекта, административная подпись и точка карты",
+      "section": "location",
+      "fallback": "source_candidate_marked_in_preview",
+      "blocks": "map_publication",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "sales_contacts",
+      "needed": "Телефон, WhatsApp, офис, часы",
+      "section": "contact",
+      "fallback": "source_candidates_disabled_until_verified",
+      "blocks": "working_public_contact",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "construction_updates",
+      "needed": "Фото/видео стройки, даты, этапы, подтверждённые сроки",
+      "section": "construction",
+      "fallback": "compact_question_in_public_version",
+      "blocks": "dated_journal",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "purchase_terms",
+      "needed": "Подтверждённые способы покупки и действующие условия",
+      "section": "purchase",
+      "fallback": "consultation_only",
+      "blocks": "numeric_terms",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "legal_documents",
+      "needed": "Действительные документы проекта, реквизиты, политика обработки данных",
+      "section": "documents / contact / footer",
+      "fallback": "catalogs_only_not_legal_claim",
+      "blocks": "form_publication",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "backend",
+      "needed": "Endpoint формы, CRM или реальный чат-провайдер",
+      "section": "contact",
+      "fallback": "explicit_demo_no_fake_success",
+      "blocks": "lead_delivery",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "logo_vector",
+      "needed": "Оригинальный SVG логотипа и версия на белом",
+      "section": "header",
+      "fallback": "original_raster_on_green_tile",
+      "blocks": "vector_master",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "ornament_vector",
+      "needed": "Точный векторный модуль из каталога с происхождением",
+      "section": "comfort / contact",
+      "fallback": "leave_decoration_empty",
+      "blocks": "ornament_master",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "eagle_animation",
+      "needed": "Чистый статичный силуэт орла без ореола, затем опционально 2–3 положения крыльев",
+      "section": "hero",
+      "fallback": "Обычная неподвижная кнопка «Задать вопрос»; отвергнутый рисунок хранится reference-only",
+      "blocks": "eagle_art_only_contact_still_available",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "kyrgyz_translation",
+      "needed": "Отредактированный кыргызский перевод всех строк",
+      "section": "whole_page",
+      "fallback": "Russian_version_no_dead_switch",
+      "blocks": "KY_language",
+      "status": "requires_owner_data_or_asset_preparation"
+    },
+    {
+      "id": "fonts",
+      "needed": "Официальные WOFF2 Noto с лицензиями",
+      "section": "whole_page",
+      "fallback": "download_from_official_source_before_build",
+      "blocks": "font_delivery",
+      "status": "requires_owner_data_or_asset_preparation"
+    }
+  ]
+}

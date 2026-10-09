@@ -1,0 +1,508 @@
+/* Токены: spec/design-tokens.json. Фон строго #FFFFFF (решение заказчика), цвет только в изображениях.
+   Скругления: 2px у всех контролов и панелей, 0 у изображений. */
+:root {
+  --canvas: #ffffff;
+  --ink: #182029;
+  --muted: #59615e;
+  --forest: #053131;
+  --gold: #bca37b;
+  --line: #dadfd6;
+  --line-control: #77847d;
+  --focus: #254e8a;
+  --error: #a64037;
+  --tint: #f5f6f4;
+  --night: #142c46;
+  --on-night: #f3efe6;
+  --on-night-muted: #c3ccd6;
+  --r: 2px;
+  --serif: 'Noto Serif', Georgia, serif;
+  --sans: 'Noto Sans', system-ui, sans-serif;
+  --margin: 72px;
+  --gutter: 24px;
+  --gap: 136px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  color-scheme: light;
+}
+@media (max-width: 1279px) { :root { --margin: 64px; --gap: 120px; } }
+@media (max-width: 1023px) { :root { --margin: 40px; --gutter: 20px; --gap: 96px; } }
+@media (max-width: 767px)  { :root { --margin: 20px; --gutter: 12px; --gap: 72px; } }
+@media (max-width: 359px)  { :root { --margin: 16px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 1023px) { html { scroll-padding-top: 16px; } }
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font: 400 18px/28px var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+@media (max-width: 767px) { body { font-size: 16px; line-height: 25px; } }
+img { display: block; max-width: 100%; height: auto; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; }
+h1 { font-size: 60px; line-height: 66px; letter-spacing: -.012em; }
+h2 { font-size: 44px; line-height: 52px; letter-spacing: -.008em; }
+h3 { font-size: 22px; line-height: 30px; }
+p { margin: 0; text-wrap: pretty; }
+@media (max-width: 767px) {
+  h1 { font-size: 36px; line-height: 42px; }
+  h2 { font-size: 30px; line-height: 36px; }
+  h3 { font-size: 20px; line-height: 28px; }
+}
+@media (max-width: 359px) { h1 { font-size: 32px; line-height: 38px; } }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 1440px; margin-inline: auto; padding-inline: var(--margin); }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); }
+.col-4 { grid-column: span 4; } .col-5 { grid-column: span 5; } .col-6 { grid-column: span 6; } .col-8 { grid-column: span 8; }
+@media (max-width: 1023px) {
+  .grid { grid-template-columns: minmax(0, 1fr); row-gap: 32px; }
+  .grid > * { grid-column: 1 / -1; }
+}
+
+.section { padding-top: var(--gap); }
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--ink); color: #fff; padding: 12px 16px; }
+.skip:focus { left: 8px; }
+
+/* ---------- типографика ---------- */
+.kicker {
+  display: flex; align-items: center; gap: 12px;
+  font: 500 13px/20px var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--forest);
+  margin-bottom: 20px;
+}
+.kicker::before { content: ''; width: 16px; height: 16px; background: url(/img/orn/rosette.svg) center / contain no-repeat; }
+.head { margin-bottom: 40px; max-width: 760px; }
+.head h2 + .lead { margin-top: 20px; }
+.lead { font-size: 20px; line-height: 31px; color: var(--muted); max-width: 36em; }
+@media (max-width: 767px) { .lead { font-size: 17px; line-height: 27px; } .head { margin-bottom: 28px; } }
+.muted { color: var(--muted); font-size: 15px; line-height: 23px; }
+.small { font-size: 13px; line-height: 19px; }
+.caption { font-size: 14px; line-height: 20px; color: var(--muted); margin-top: 12px; }
+.art { width: 100%; height: auto; }
+figure, dl, dd { margin: 0; }
+
+/* ---------- контролы ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 56px; padding: 0 28px; border-radius: var(--r); border: 1px solid var(--ink);
+  font: 500 16px/24px var(--sans); text-decoration: none; white-space: nowrap;
+  transition: background-color .14s var(--ease), color .14s var(--ease), border-color .14s var(--ease), transform .1s;
+}
+.btn:active, .chip:active { transform: translateY(1px); }
+.btn--dark { background: var(--ink); color: #fff; }
+.btn--ghost { background: #fff; }
+.btn--sm { min-height: 48px; padding: 0 20px; font-size: 15px; }
+.btn--full { width: 100%; }
+.btn:disabled { opacity: .6; cursor: progress; }
+@media (max-width: 767px) { .btn { min-height: 52px; } }
+.link {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0; border: 0; background: none;
+  font: 500 16px/24px var(--sans); color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold);
+  text-underline-offset: 6px; text-decoration-thickness: 1px; transition: text-decoration-color .14s;
+}
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.chip {
+  min-height: 48px; min-width: 48px; padding: 0 18px; border-radius: var(--r); border: 1px solid var(--line);
+  background: #fff; font-size: 15px; font-weight: 500; transition: border-color .14s, background-color .14s, transform .1s;
+}
+.chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.arch-top .tabs { flex: none; flex-wrap: nowrap; }
+
+/* ---------- шапка ---------- */
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px); }
+/* розетка «төрт мүйүз» по центру нижней линии шапки */
+.site-header::after { content: ''; position: absolute; left: 50%; bottom: -13px; width: 26px; height: 26px; transform: translateX(-50%); background: #fff url(/img/orn/rosette.svg) center / 18px no-repeat; border: 1px solid var(--gold); border-radius: 50%; pointer-events: none; }
+.site-header::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent); opacity: .7; }
+.site-header__in { height: 80px; display: flex; align-items: center; gap: 32px; }
+.logo { display: inline-flex; background: var(--forest); padding: 7px 11px; border-radius: var(--r); flex: none; }
+.logo img { width: 58px; height: auto; }
+.site-nav { display: flex; gap: 28px; margin-inline: auto; }
+.site-nav a { position: relative; font-size: 15px; font-weight: 500; text-decoration: none; padding: 12px 0; }
+.site-nav a::after { content: ''; position: absolute; left: 50%; bottom: 2px; width: 6px; height: 6px; background: var(--gold); transform: translateX(-50%) rotate(45deg) scale(0); transition: transform .16s var(--ease); }
+.site-nav a:hover::after, .site-nav a:focus-visible::after { transform: translateX(-50%) rotate(45deg) scale(1); }
+.site-header__act { display: flex; align-items: center; gap: 20px; }
+.phone { font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.menu-btn { display: none; }
+@media (max-width: 1199px) { .phone { display: none; } .site-nav { gap: 20px; } }
+@media (max-width: 1023px) {
+  .site-header { position: relative; }
+  .site-header__in { height: 72px; justify-content: space-between; }
+  .site-nav, .site-header__act > .btn:not(.menu-btn) { display: none; }
+  .menu-btn { display: inline-flex; }
+  .logo img { width: 52px; }
+}
+
+/* ---------- модальные слои ---------- */
+dialog { border: 0; padding: 0; color: var(--ink); max-width: none; max-height: none; }
+dialog::backdrop { background: rgba(24, 32, 41, .42); }
+.sheet {
+  position: fixed; inset: 0 0 0 auto; height: 100dvh; width: min(440px, 100vw); margin: 0;
+  background: #fff; padding: 24px; padding-bottom: max(24px, env(safe-area-inset-bottom)); overflow-y: auto;
+}
+.sheet[open] { animation: sheet .2s var(--ease); }
+@keyframes sheet { from { opacity: 0; transform: translateX(16px); } }
+.sheet__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.sheet__h { font-size: 28px; line-height: 36px; }
+.sheet__quick { display: flex; gap: 8px; margin-bottom: 24px; }
+.sheet__quick .btn { flex: 1; }
+.menu-list { display: flex; flex-direction: column; }
+.menu-list a { font: 400 24px/32px var(--serif); text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.menu-foot { display: grid; gap: 12px; margin-top: 32px; }
+.lightbox { width: min(1200px, 100vw - 32px); background: #fff; padding: 16px; border-radius: var(--r); }
+.lightbox[open] { animation: fade .18s var(--ease); }
+@keyframes fade { from { opacity: 0; } }
+.lightbox img { width: 100%; max-height: calc(100dvh - 140px); object-fit: contain; }
+.lightbox__bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 12px; }
+.lightbox__bar .caption { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .sheet[open], .lightbox[open] { animation: none; } }
+
+/* ---------- 01 hero: текст слева, горы справа, дома ниже ---------- */
+.hero { display: grid; grid-template-columns: 4.4fr 7.6fr; gap: var(--gutter); align-items: center; padding-top: 48px; }
+.hero__text { padding-bottom: 64px; }
+.hero__text h1 { max-width: 9.5em; }
+.hero__text .lead { margin-top: 24px; max-width: 24em; }
+.hero__text .actions { margin-top: 36px; }
+.hero__scene { margin-right: calc(var(--margin) * -1); }
+/* горы — задник за зданием: уже фасада и опущены за крыши, плоский низ хребта скрыт */
+.hero__art { position: relative; padding-top: 17%; }
+.hero__mountains { position: absolute; top: 0; left: 5%; width: 88%; -webkit-mask-image: linear-gradient(#000 78%, transparent 97%); mask-image: linear-gradient(#000 78%, transparent 97%); }
+.hero__houses { width: 100%; position: relative; }
+.hero__scene .caption { text-align: right; padding-right: var(--margin); }
+@media (max-width: 1199px) {
+  .hero { grid-template-columns: 1fr; padding-top: 40px; }
+  .hero__text { padding-bottom: 0; }
+  .hero__scene { margin: 16px calc(var(--margin) * -1) 0; }
+  .hero__scene .caption { padding-inline: var(--margin); }
+}
+
+/* ---------- 02 обзор: редакционное заявление + гуашь ---------- */
+.statement { font-size: 40px; line-height: 52px; max-width: 22em; letter-spacing: -.01em; }
+.overview__body { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; margin-top: 48px; }
+.overview__art { margin-left: calc(var(--margin) * -.5); }
+.overview__text > * + * { margin-top: 24px; }
+.facts { display: grid; gap: 20px; }
+.facts div { display: grid; grid-template-columns: 8.5em 1fr; gap: 16px; align-items: baseline; }
+.facts dt { font-family: var(--serif); font-size: 20px; line-height: 28px; }
+.facts dd { margin: 0; color: var(--muted); font-size: 16px; line-height: 25px; }
+@media (max-width: 1023px) {
+  .statement { font-size: 30px; line-height: 40px; }
+  .overview__body { grid-template-columns: 1fr; gap: 32px; }
+  .overview__art { margin-inline: calc(var(--margin) * -.5); width: auto; }
+}
+@media (max-width: 767px) { .statement { font-size: 24px; line-height: 33px; } .facts div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---------- 03 архитектура: широкое изображение ---------- */
+.arch-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin-bottom: 40px; }
+.arch-top .head { margin-bottom: 0; }
+.gallery__main, .diptych__a, .plan-img { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.gallery__main img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; animation: fade .16s; }
+.gallery__row { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.thumbs { display: flex; gap: 8px; margin-top: 12px; flex: none; }
+.thumb { padding: 0; border: 1px solid transparent; background: none; }
+.thumb img { width: 96px; height: 64px; object-fit: cover; opacity: .7; transition: opacity .14s; }
+.thumb[aria-pressed='true'] { border-color: var(--ink); }
+@media (max-width: 1023px) { .arch-top { flex-direction: column; align-items: flex-start; } .gallery__main img { aspect-ratio: 3 / 2; } }
+@media (max-width: 767px) { .gallery__row { flex-direction: column-reverse; gap: 0; } .thumb img { width: 80px; height: 54px; } }
+
+/* ---------- 04 двор: бенто из трёх реальных кадров ---------- */
+.bento { display: grid; grid-template-columns: 8fr 4fr; grid-template-rows: auto auto; gap: var(--gutter); margin-bottom: 24px; }
+.bento figure { display: flex; flex-direction: column; }
+.bento img { width: 100%; object-fit: cover; flex: 1; min-height: 0; }
+.bento__a { grid-row: 1 / span 2; }
+.bento__a img { aspect-ratio: 4 / 3; }
+.bento__b img, .bento__c img { aspect-ratio: 4 / 3; }
+.bento figcaption { font-size: 15px; line-height: 23px; color: var(--muted); margin-top: 12px; max-width: 40em; }
+.bento figcaption strong { color: var(--ink); font-weight: 500; }
+@media (max-width: 767px) { .bento { grid-template-columns: 1fr; } .bento__a { grid-row: auto; } }
+
+/* ---------- 05 наследие ---------- */
+.heritage__in { align-items: center; }
+.heritage__art { grid-column: 1 / span 8; margin: 0 0 0 calc(var(--margin) * -1); }
+.heritage__art img { width: 100%; }
+.heritage__art .caption { padding-left: var(--margin); }
+.heritage__text { grid-column: 9 / span 4; max-width: 400px; }
+.heritage__text > * + * { margin-top: 24px; }
+.heritage__text .head { margin-bottom: 0; }
+@media (max-width: 1023px) {
+  .heritage__art { grid-column: 1 / -1; margin-right: calc(var(--margin) * -1); }
+  .heritage__text { grid-column: 1 / -1; max-width: 36em; order: -1; }
+}
+
+/* ---------- 06 холлы: диптих ---------- */
+.diptych { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; }
+.diptych__a img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.diptych__b { display: grid; gap: 32px; }
+.diptych__b .head { margin-bottom: 0; }
+.diptych__b figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+@media (max-width: 1023px) { .diptych { grid-template-columns: 1fr; gap: 32px; } .diptych__b { order: -1; } .diptych__a img { aspect-ratio: 4 / 3; } }
+
+/* ---------- 07 комфорт: окно + группы характеристик ---------- */
+.comfort { display: grid; grid-template-columns: 4fr 8fr; gap: 64px; align-items: start; }
+.comfort__art { position: sticky; top: 112px; }
+.cluster { padding-top: 28px; margin-top: 28px; border-top: 1px solid var(--ink); display: grid; grid-template-columns: 10em 1fr; gap: 24px; }
+.cluster:first-of-type { margin-top: 0; }
+.cluster dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+.cluster dt { font-size: 14px; line-height: 20px; color: var(--muted); }
+.cluster dd { margin: 4px 0 0; font-size: 16px; line-height: 24px; }
+@media (max-width: 1023px) {
+  .comfort { grid-template-columns: 1fr; gap: 24px; }
+  .comfort__art { position: static; max-width: 300px; }
+  .cluster { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 479px) { .cluster dl { grid-template-columns: 1fr; gap: 14px; } }
+
+/* ---------- 08 террасы: гуашь накладывается на реальный рендер ---------- */
+.terraces__top { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: end; }
+.terraces__text > * + * { margin-top: 32px; }
+.overview__text .facts { margin-top: 32px; }
+.terraces__text .head { margin-bottom: 0; }
+.terraces__art { position: relative; z-index: 1; margin-bottom: -7%; }
+.terraces__photo img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+@media (max-width: 1023px) {
+  .terraces__top { grid-template-columns: 1fr; gap: 24px; }
+  .terraces__art { max-width: 560px; margin: 0 auto -10%; }
+  .terraces__photo img { aspect-ratio: 16 / 10; }
+}
+
+/* ---------- 09 площади и каталог ---------- */
+.areas { display: flex; flex-wrap: wrap; gap: 24px 40px; }
+.areas dt { font-size: 14px; line-height: 20px; color: var(--muted); }
+.areas dd { margin: 4px 0 0; font: 400 40px/48px var(--serif); white-space: nowrap; }
+.areas .dd-sm { font-size: 24px; line-height: 48px; }
+@media (max-width: 767px) { .areas dd { font-size: 32px; line-height: 40px; } .areas { gap: 16px 28px; } }
+
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px; padding: 20px 0; border-block: 1px solid var(--line); margin-bottom: 40px; }
+.filters__g { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.filters__g > span { font-size: 14px; color: var(--muted); margin-right: 8px; }
+.check { display: inline-flex; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; font-weight: 500; cursor: pointer; }
+.check input { width: 22px; height: 22px; accent-color: var(--ink); margin: 0; }
+.catalog { display: grid; grid-template-columns: 4fr 8fr; gap: var(--gutter); align-items: start; }
+.catalog__list { list-style: none; margin: 0; padding: 0; max-height: 640px; overflow-y: auto; }
+.plan-row {
+  display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; width: 100%; min-height: 88px; padding: 16px 16px 16px 20px;
+  text-align: left; background: #fff; border: 0; border-left: 2px solid transparent; transition: background-color .14s, border-color .14s;
+}
+.plan-row[aria-pressed='true'] { border-left-color: var(--ink); background: var(--tint); }
+.plan-row__t { font-weight: 500; font-size: 16px; }
+.plan-row__m { grid-row: 2; font-size: 14px; color: var(--muted); }
+.plan-row__a { grid-row: 1 / span 2; grid-column: 2; align-self: center; text-align: right; font: 400 20px/26px var(--serif); }
+.plan-row__a small { display: block; font: 400 13px/18px var(--sans); color: var(--muted); }
+.catalog__view { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: start; position: sticky; top: 104px; }
+.plan-img { border: 1px solid var(--line); padding: 16px; background: #fff; border-radius: var(--r); }
+.plan-img img { width: 100%; height: 520px; object-fit: contain; animation: fade .15s; }
+.plan-info > * + * { margin-top: 20px; }
+.plan-info .kicker { margin-bottom: 0; color: var(--muted); }
+.plan-info .kicker::before { display: none; }
+.empty { padding: 48px 0; display: grid; gap: 16px; justify-items: start; }
+@media (max-width: 1199px) { .catalog__view { grid-template-columns: 1fr; } .plan-img img { height: 420px; } }
+@media (max-width: 1023px) {
+  .catalog { grid-template-columns: 1fr; }
+  .catalog__view { position: static; order: -1; }
+  .catalog__list { max-height: none; }
+}
+@media (max-width: 767px) { .plan-img img { height: 320px; } .filters { gap: 12px 24px; } }
+
+/* ---------- 10 расположение ---------- */
+.location-art { margin: 0 auto; max-width: 1440px; padding-inline: calc(var(--margin) / 2); }
+.location-art img { width: 100%; }
+.location { margin-top: 56px; align-items: start; }
+.map { min-height: 420px; background: var(--tint); border-radius: var(--r); display: flex; overflow: hidden; }
+.map iframe { width: 100%; min-height: 420px; border: 0; }
+.map__ph { margin: auto; text-align: center; display: grid; gap: 16px; justify-items: center; padding: 32px; color: var(--muted); }
+.addr { display: grid; gap: 28px; align-content: start; }
+.addr h3 { font: 500 14px/20px var(--sans); color: var(--muted); margin-bottom: 6px; }
+.addr p { font-size: 17px; line-height: 26px; }
+@media (max-width: 767px) { .map, .map iframe { min-height: 300px; } }
+
+/* ---------- 11 покупка: горизонтальный процесс ---------- */
+.purchase-top { display: grid; grid-template-columns: 1fr 320px; gap: 48px; align-items: end; margin-bottom: 48px; }
+.purchase-top .head { margin-bottom: 0; }
+.steps { list-style: none; margin: 0 0 40px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gutter); counter-reset: s; }
+.steps li { padding-top: 20px; border-top: 1px solid var(--ink); }
+.steps__n { display: block; font: 400 48px/1 var(--serif); color: var(--gold); margin-bottom: 20px; }
+.steps p { color: var(--muted); margin-top: 8px; font-size: 15px; line-height: 23px; }
+@media (max-width: 1023px) { .steps { grid-template-columns: 1fr 1fr; row-gap: 32px; } .purchase-top { grid-template-columns: 1fr 200px; } }
+@media (max-width: 599px) {
+  .steps { grid-template-columns: 1fr; }
+  .steps li { display: grid; grid-template-columns: 48px 1fr; column-gap: 12px; }
+  .steps__n { grid-row: 1 / span 2; font-size: 32px; margin: 0; }
+  .purchase-top { grid-template-columns: 1fr; gap: 16px; }
+  .purchase-top__art { max-width: 200px; order: -1; }
+}
+
+/* ---------- 12 строительство: заголовок слева, лента справа (исходники фото маленькие, не растягиваем) ---------- */
+.construction { display: grid; grid-template-columns: 4fr 8fr; gap: var(--gutter); align-items: start; }
+.reel { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 310px)); gap: var(--gutter); justify-content: end; }
+.reel button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.reel img { width: 100%; aspect-ratio: 310 / 175; object-fit: cover; }
+.reel__d { font-size: 14px; color: var(--muted); margin-top: 14px; }
+.reel h3 { font-size: 18px; line-height: 26px; margin-top: 4px; }
+@media (max-width: 1199px) {
+  .construction { grid-template-columns: 1fr; }
+  .reel { justify-content: start; }
+}
+@media (max-width: 1023px) {
+  .reel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; margin-inline: calc(var(--margin) * -1); padding-inline: var(--margin); padding-bottom: 8px; }
+  .reel li { flex: 0 0 min(76vw, 310px); scroll-snap-align: start; }
+}
+
+/* ---------- 13 застройщик ---------- */
+.developer { display: grid; grid-template-columns: 6fr 5fr; gap: 64px; align-items: center; }
+.developer__text > * + * { margin-top: 20px; }
+.developer__logo { width: 220px; }
+.developer__text h2 { margin-top: 32px; }
+@media (max-width: 1023px) { .developer { grid-template-columns: 1fr; gap: 32px; } .developer__art { max-width: 560px; } }
+
+/* ---------- 14 каталоги: полка ---------- */
+.shelf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 6fr 6fr; grid-template-rows: auto auto; gap: var(--gutter); }
+.shelf li { display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: center; padding: 24px; background: var(--tint); border-radius: var(--r); }
+.shelf img { width: 120px; height: 120px; object-fit: cover; }
+.shelf__main { grid-row: 1 / span 2; grid-template-columns: 1fr !important; align-items: start !important; }
+.shelf__main img { width: 100%; height: auto; aspect-ratio: 4 / 3; }
+.shelf__main h3 { font-size: 28px; line-height: 36px; }
+.shelf__t > * + * { margin-top: 6px; }
+.shelf__a { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin-top: 16px !important; }
+@media (max-width: 767px) {
+  .shelf { grid-template-columns: minmax(0, 1fr); }
+  .shelf__main { grid-row: auto; }
+  .shelf li { grid-template-columns: 72px minmax(0, 1fr); padding: 16px; gap: 16px; }
+  .shelf img { width: 72px; height: 72px; }
+  .shelf__main img { width: 100%; height: auto; }
+}
+
+/* ---------- 15 FAQ ---------- */
+.faq-sec { display: grid; grid-template-columns: 4fr 8fr; gap: var(--gutter); align-items: start; }
+.faq-sec__art { max-width: 260px; margin-top: 8px; }
+.faq summary {
+  list-style: none; cursor: pointer; min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  font: 400 21px/30px var(--serif); padding: 16px 0; border-bottom: 1px solid var(--line);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font: 300 26px/1 var(--sans); flex: none; width: 48px; height: 48px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: var(--r); transition: transform .17s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { max-width: 36em; color: var(--muted); padding: 16px 64px 24px 0; }
+@media (max-width: 1023px) { .faq-sec { grid-template-columns: 1fr; } .faq-sec__art { max-width: 160px; } }
+@media (max-width: 767px) { .faq summary { font-size: 18px; line-height: 26px; } .faq details p { padding-right: 0; } }
+
+/* ---------- 16 контакт ---------- */
+.contact { align-items: start; }
+.contact__art { width: 100%; max-width: 560px; margin: 0 0 32px; }
+.contact__dl { margin: 0; display: grid; gap: 20px; }
+.contact__dl dt { font-size: 14px; color: var(--muted); }
+.contact__dl dd { margin: 4px 0 0; font-size: 17px; line-height: 26px; }
+.contact__dl a { text-decoration: none; font-weight: 500; }
+.contact__r { grid-column: 8 / span 5; position: sticky; top: 104px; }
+@media (max-width: 1023px) { .contact__r { position: static; grid-column: 1 / -1; } }
+.form { display: grid; gap: 24px; padding: 32px; border: 1px solid var(--line); border-radius: var(--r); max-width: 480px; }
+.form--compact { padding: 0; border: 0; max-width: none; gap: 16px; }
+.form--compact .field input, .form--compact .field textarea { min-height: 52px; padding-block: 13px; }
+.field { display: grid; gap: 8px; font-size: 15px; font-weight: 500; }
+.field em { font-style: normal; font-weight: 400; color: var(--muted); }
+.field input, .field textarea {
+  font: 400 17px/24px var(--sans); color: var(--ink); background: #fff;
+  border: 1px solid var(--line-control); border-radius: var(--r); padding: 15px 16px; min-height: 56px; width: 100%;
+  transition: border-color .14s;
+}
+.field input::placeholder { color: #6b726f; }
+.field textarea { resize: vertical; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 0; border-color: var(--focus); }
+.field input[aria-invalid='true'] { border-color: var(--error); border-width: 2px; }
+.field__err { color: var(--error); font-weight: 400; font-size: 14px; line-height: 20px; }
+.field__err::before { content: '! '; font-weight: 700; }
+.ctx { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 8px 12px 16px; background: var(--tint); border-left: 2px solid var(--gold); font-size: 15px; line-height: 22px; }
+.ctx small { display: block; color: var(--muted); font-size: 13px; }
+.ctx__x { width: 48px; height: 48px; flex: none; border: 0; background: none; font-size: 24px; color: var(--muted); }
+.form-done { display: grid; gap: 16px; padding: 32px; border: 1px solid var(--line); border-left: 2px solid var(--gold); border-radius: var(--r); max-width: 480px; }
+@media (max-width: 767px) { .form { padding: 20px; } .form-done { padding: 20px; } }
+
+/* ---------- футер с гуашевым горизонтом ---------- */
+.site-footer { padding-bottom: 32px; }
+.site-footer__in { display: grid; grid-template-columns: 4fr 6fr 2fr; gap: var(--gutter); padding-top: 64px; }
+.site-footer__brand { display: grid; gap: 20px; justify-items: start; }
+.site-footer__nav { display: grid; grid-template-columns: repeat(3, auto); gap: 12px 32px; justify-content: start; align-content: start; }
+.site-footer__nav a, .site-footer__c a { text-decoration: none; font-size: 15px; padding: 4px 0; }
+.site-footer__c { display: grid; gap: 8px; align-content: start; font-weight: 500; }
+.site-footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+@media (max-width: 1023px) {
+  .site-footer__in { grid-template-columns: 1fr; gap: 40px; }
+  .site-footer__nav { grid-template-columns: repeat(2, auto); }
+}
+
+
+/* hover только там, где есть указатель: на тач-экранах не залипает */
+@media (hover: hover) {
+  .btn--dark:hover { background: var(--forest); border-color: var(--forest); }
+  .btn--ghost:hover { background: var(--ink); color: #fff; }
+  .link:hover { text-decoration-color: var(--ink); }
+  .chip:hover { border-color: var(--line-control); }
+  .thumb[aria-pressed='true'] img, .thumb:hover img { opacity: 1; }
+  .plan-row:hover { background: var(--tint); }
+  .field input:hover, .field textarea:hover { border-color: var(--ink); }
+  .site-footer__nav a:hover, .site-footer__c a:hover { text-decoration: underline; text-decoration-color: var(--gold); }
+}
+
+/* ---------- орнамент «төрт мүйүз»: разделители и карточки ---------- */
+.orn-div { display: flex; align-items: center; gap: 20px; max-width: 1440px; margin: calc(var(--gap) * .7) auto 0; padding-inline: var(--margin); }
+.orn-div::before, .orn-div::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+.orn-div span { width: 40px; height: 40px; background: url(/img/orn/rosette.svg) center / contain no-repeat; }
+.orn-div + .section { padding-top: calc(var(--gap) * .7); }
+.form, .shelf li, .plan-img, .steps li { position: relative; }
+.shelf li { border-top: 3px solid var(--gold); }
+
+/* ---------- тёмные акцентные секции ---------- */
+/* орнамент проступает только у верхнего и нижнего края и растворяется к центру */
+.dark { position: relative; background: var(--night); color: var(--on-night); margin-top: var(--gap); padding-block: var(--gap); }
+.dark::before { content: ''; position: absolute; inset: 0; background: url(/img/orn/tile-dark.webp) center / 320px repeat; opacity: .35; pointer-events: none;
+  -webkit-mask-image: linear-gradient(#000, transparent 120px, transparent calc(100% - 120px), #000); mask-image: linear-gradient(#000, transparent 120px, transparent calc(100% - 120px), #000); }
+.dark > * { position: relative; }
+.dark h2, .dark h3 { color: #fff; }
+.dark p, .dark .lead, .dark .muted, .dark .caption, .dark .steps p { color: var(--on-night-muted); }
+.dark .link { color: #fff; }
+.dark .btn--dark { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.dark .dark .steps li { border-top-color: rgba(243, 239, 230, .45); }
+.dark :focus-visible { outline-color: #fff; }
+.heritage.dark .heritage__text p { color: var(--on-night); }
+
+/* ---------- баннер перед подвалом ---------- */
+.banner { position: relative; margin-top: var(--gap); background: var(--night); color: var(--on-night); }
+.banner img { width: 100%; height: auto; min-height: 520px; object-fit: cover; object-position: 70% 50%; }
+.banner__text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px; }
+.banner__text h2 { color: #fff; max-width: 9em; font-size: 52px; line-height: 60px; }
+.banner__text p { max-width: 24em; color: var(--on-night-muted); }
+.banner__text .btn--dark { background: var(--gold); border-color: var(--gold); color: var(--ink); margin-top: 8px; }
+@media (max-width: 767px) {
+  .banner { display: flex; flex-direction: column-reverse; }
+  .banner img { min-height: 0; }
+  .banner__text { position: static; padding-block: 56px 32px; }
+  .banner__text h2 { font-size: 32px; line-height: 38px; }
+}
+
+/* ---------- контактное окно по центру ---------- */
+.modal { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; background: #fff; border-radius: var(--r); overflow: auto; box-shadow: 0 24px 64px rgba(20, 44, 70, .28); }
+.modal[open] { animation: pop .22s var(--ease); }
+@keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+.modal::backdrop { background: rgba(20, 44, 70, .55); }
+.modal__hero { position: relative; height: 128px; background: var(--night) url(/img/banner-m.webp) 60% 62% / cover no-repeat; }
+.modal__close { position: absolute; top: 12px; right: 12px; width: 48px; height: 48px; border: 0; border-radius: var(--r); background: rgba(255, 255, 255, .92); font: 300 28px/1 var(--sans); color: var(--ink); }
+.modal__body { padding: 28px 32px 32px; display: grid; gap: 12px; }
+.modal__h { font-size: 30px; line-height: 38px; }
+.modal__quick { display: flex; gap: 8px; margin: 4px 0 8px; }
+.modal__quick .btn { flex: 1; }
+@media (max-width: 479px) { .modal__body { padding: 24px 20px; } .modal__hero { height: 112px; } }
+@media (prefers-reduced-motion: reduce) { .modal[open] { animation: none; } }
+
+/* ---------- тёмный подвал: продолжение вечернего баннера ---------- */
+.site-footer { background: var(--night); color: var(--on-night); }
+.site-footer .muted, .site-footer__base { color: var(--on-night-muted); }
+.site-footer__base { border-top-color: rgba(243, 239, 230, .18); }
+.site-footer__nav a, .site-footer__c a { color: var(--on-night); }
+.site-footer .logo { background: transparent; border: 1px solid rgba(188, 163, 123, .55); }
+.site-footer :focus-visible { outline-color: #fff; }
+@media (max-width: 767px) { .form.form--compact { padding: 0; } }

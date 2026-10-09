@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0",
+  "units": "CSS px unless otherwise stated",
+  "status": "designer_proposal_except_user_fixed_white",
+  "colors": {
+    "canvas": "#FFFFFF",
+    "surface": "#FFFFFF",
+    "ink": "#182029",
+    "text_secondary": "#59615E",
+    "forest": "#053131",
+    "gold_decoration": "#BCA37B",
+    "silver_decoration": "#C3C8C5",
+    "line_subtle": "#DADDD6",
+    "line_control": "#77847D",
+    "focus": "#254E8A",
+    "error": "#A64037",
+    "success": "#355C43"
+  },
+  "white_policy": {
+    "user_fixed": true,
+    "no_beige_sections": true,
+    "no_paper_texture": true,
+    "no_ui_gradients": true,
+    "artwork_ivory_and_ochre_allowed": true
+  },
+  "contrast_on_white": {
+    "ink": 16.44,
+    "text_secondary": 6.37,
+    "gold_decoration": 2.42,
+    "error": 6.16,
+    "line_control": 3.9
+  },
+  "typography": {
+    "display_family": "Noto Serif",
+    "text_family": "Noto Sans",
+    "languages": [
+      "ru",
+      "ky-Cyrl"
+    ],
+    "required_glyphs": "ӨөҮүҢң",
+    "roles": {
+      "h1": {
+        "weight": 400,
+        "desktop": [
+          60,
+          66
+        ],
+        "mobile": [
+          36,
+          42
+        ],
+        "narrow_mobile": [
+          32,
+          38
+        ]
+      },
+      "h2": {
+        "weight": 400,
+        "desktop": [
+          44,
+          52
+        ],
+        "mobile": [
+          30,
+          36
+        ]
+      },
+      "h3": {
+        "weight": 400,
+        "desktop": [
+          28,
+          36
+        ],
+        "mobile": [
+          24,
+          30
+        ]
+      },
+      "area": {
+        "weight": 400,
+        "desktop": [
+          40,
+          48
+        ],
+        "mobile": [
+          34,
+          40
+        ]
+      },
+      "body": {
+        "weight": 400,
+        "desktop": [
+          18,
+          28
+        ],
+        "mobile": [
+          16,
+          25
+        ]
+      },
+      "ui": {
+        "weight": 500,
+        "desktop": [
+          16,
+          24
+        ],
+        "mobile": [
+          16,
+          24
+        ]
+      },
+      "caption": {
+        "weight": 400,
+        "desktop": [
+          14,
+          20
+        ],
+        "mobile": [
+          14,
+          20
+        ]
+      },
+      "eyebrow": {
+        "weight": 500,
+        "desktop": [
+          12,
+          18
+        ],
+        "mobile": [
+          12,
+          18
+        ],
+        "tracking_em": 0.06
+      }
+    },
+    "body_max_characters": 60,
+    "hero_copy_max_width": 440,
+    "heading_tracking_em": 0,
+    "logo_is_font": false,
+    "font_delivery": "Самостоятельно получить Noto из официального репозитория с OFL; self-host WOFF2, сохранить кириллицу и кыргызские глифы. Шрифтовые бинарники в архив не включены."
+  },
+  "grid": {
+    "max_content_width": 1440,
+    "checkpoints": [
+      {
+        "viewport": 1440,
+        "margin": 72,
+        "columns": 12,
+        "gutter": 24
+      },
+      {
+        "viewport": 1280,
+        "margin": 64,
+        "columns": 12,
+        "gutter": 24
+      },
+      {
+        "viewport": 1024,
+        "margin": 48,
+        "columns": 8,
+        "gutter": 20
+      },
+      {
+        "viewport": 768,
+        "margin": 24,
+        "columns": 8,
+        "gutter": 20
+      },
+      {
+        "viewport": 390,
+        "margin": 20,
+        "columns": 4,
+        "gutter": 12
+      },
+      {
+        "viewport": 320,
+        "margin": 16,
+        "columns": 4,
+        "gutter": 12
+      }
+    ],
+    "breakpoint_proposal": {
+      "mobile": "<768",
+      "tablet": "768–1199",
+      "desktop": ">=1200"
+    },
+    "stack_editorial_at": "<1024; hero допускает вертикальную композицию ниже 1200 при нехватке места",
+    "checkpoints_are_not_fixed_device_widths": true
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "section_gap": {
+    "desktop": [
+      96,
+      128
+    ],
+    "mobile": [
+      64,
+      80
+    ]
+  },
+  "radii": {
+    "control": 4,
+    "functional_panel": 8,
+    "editorial_media": 0
+  },
+  "controls": {
+    "button_height_desktop": 56,
+    "button_height_mobile": 52,
+    "field_height": 56,
+    "horizontal_padding": 24,
+    "minimum_target_design_choice": [
+      48,
+      48
+    ],
+    "focus_width": 2,
+    "focus_offset": 3,
+    "label_field_gap": 8,
+    "field_help_gap": 8,
+    "field_group_gap": 24
+  },
+  "motion": {
+    "hover_ms": [
+      120,
+      160
+    ],
+    "plan_swap_ms": [
+      120,
+      160
+    ],
+    "panel_ms": [
+      180,
+      220
+    ],
+    "panel_translate_max": 16,
+    "eagle_ms": [
+      2400,
+      2800
+    ],
+    "eagle_frequency": "one_per_visit_proposal",
+    "eagle_mobile": "static",
+    "reduced_motion": "instant functional state changes; static art; no smooth scroll",
+    "natural_scroll": true
+  },
+  "performance_targets": {
+    "LCP_seconds": 2.5,
+    "INP_ms": 200,
+    "CLS": 0.1,
+    "measurement": "75th percentile real visits separately mobile/desktop; not measured yet",
+    "first_load_transfer_budget_proposal_bytes": 2000000,
+    "mobile_hero_media_budget_proposal_bytes": 450000,
+    "no_pdf_prefetch": true,
+    "no_mandatory_video": true
+  }
+}
