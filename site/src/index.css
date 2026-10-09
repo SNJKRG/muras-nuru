@@ -170,7 +170,7 @@ dialog::backdrop { background: rgba(24, 32, 41, .42); }
 .hero__text .lead { margin-top: 24px; max-width: 24em; }
 .hero__text .actions { margin-top: 36px; }
 .hero__scene { margin-right: calc(var(--margin) * -1); }
-/* горы — задник за зданием: уже фасада и опущены за крыши, плоский низ хребта скрыт */
+/* горы: задник за зданием: уже фасада и опущены за крыши, плоский низ хребта скрыт */
 .hero__art { position: relative; padding-top: 17%; }
 .hero__mountains { position: absolute; top: 0; left: 5%; width: 88%; -webkit-mask-image: linear-gradient(#000 78%, transparent 97%); mask-image: linear-gradient(#000 78%, transparent 97%); }
 .hero__houses { width: 100%; position: relative; }

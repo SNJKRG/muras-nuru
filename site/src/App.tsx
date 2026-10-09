@@ -112,7 +112,7 @@ function Hero() {
       </div>
       <figure className="hero__scene">
         <div className="hero__art">
-          <img className="hero__mountains" src="/img/mountains.webp" alt="Хребет Ала-Тоо, гуашь" width="1600" height="552" fetchPriority="high" />
+          <img className="hero__mountains" src="/img/mountains.webp" alt="Хребет Ала-Тоо" width="1600" height="552" fetchPriority="high" />
           <img className="hero__houses" src="/img/houses.webp" alt="Малоэтажные дома третьего этапа" width="1700" height="657" fetchPriority="high" />
         </div>
         <figcaption className="caption">Третий этап · Проектная визуализация</figcaption>
@@ -132,7 +132,7 @@ function Overview() {
         </h2>
       </div>
       <div className="wrap overview__body">
-        <Art className="overview__art" src="/img/boulevard-art.webp" alt="Аллея тополей, фонтан и прогулка семьи, гуашь" w={1600} h={903} />
+        <Art className="overview__art" src="/img/boulevard-art.webp" alt="Аллея тополей, фонтан и прогулка семьи" w={1600} h={903} />
         <div className="overview__text">
           <p>Muras Nuru строится по очередям. У каждого этапа свой тип домов и свои планировки, а объединяет их общий бульвар: зелёная ось, где удобно гулять, встречаться и отдыхать.</p>
           <dl className="facts">
@@ -259,7 +259,7 @@ function Comfort() {
   return (
     <section id="comfort" className="section wrap comfort" aria-labelledby="comfort-title">
       <div className="comfort__art">
-        <Art src="/img/window.webp" alt="Открытое окно с геранью и видом на горы, гуашь" w={800} h={1062} />
+        <Art src="/img/window.webp" alt="Открытое окно с геранью и видом на горы" w={800} h={1062} />
       </div>
       <div className="comfort__body">
         <Head id="comfort" title="Продумано для повседневной жизни" lead="Устройство дома, безопасность двора и обслуживание." />
@@ -290,7 +290,7 @@ function Terraces({ onTerrace }: { onTerrace: () => void }) {
           </dl>
           <a className="btn btn--dark" href="#apartments" onClick={onTerrace}>Планировки с террасой</a>
         </div>
-        <Art className="terraces__art" src="/img/terrace-art.webp" alt="Терраса с цветущей яблоней, девочка поливает цветы, гуашь" w={1400} h={994} />
+        <Art className="terraces__art" src="/img/terrace-art.webp" alt="Терраса с цветущей яблоней, девочка поливает цветы" w={1400} h={994} />
       </div>
       <figure className="wrap terraces__photo">
         <img src="/img/terraces.webp" alt="Малоэтажный дом третьего этапа с террасами на первом этаже" loading="lazy" />
@@ -391,7 +391,7 @@ function Location() {
         <Head id="location" title="Место между городом и горами" lead="Южная часть Бишкека. Городская инфраструктура рядом, Ала-Тоо на горизонте." />
       </div>
       <figure className="location-art">
-        <img src="/img/location.webp" alt="Бульвар с тополями, дома и хребет Ала-Тоо, гуашь" loading="lazy" width="1800" height="729" />
+        <img src="/img/location.webp" alt="Бульвар с тополями, дома и хребет Ала-Тоо" loading="lazy" width="1800" height="729" />
       </figure>
       <div className="wrap grid location">
         <div className="col-8 map">
@@ -427,7 +427,7 @@ function Purchase() {
       <div className="wrap">
       <div className="purchase-top">
         <Head id="purchase" title="Обсудим подходящий способ покупки" lead="Стоимость выбранного варианта и действующие условия уточнит отдел продаж." />
-        <Art className="purchase-top__art" src="/img/keys.webp" alt="Ключи с войлочной кисточкой и пиала чая, гуашь" w={800} h={672} />
+        <Art className="purchase-top__art" src="/img/keys.webp" alt="Ключи с войлочной кисточкой и пиала чая" w={800} h={672} />
       </div>
       <ol className="steps">
         {steps.map(([t, d], k) => (
@@ -467,7 +467,7 @@ function Construction() {
 function Developer() {
   return (
     <section id="developer" className="section wrap developer" aria-labelledby="developer-title">
-      <Art className="developer__art" src="/img/horses.webp" alt="Лошади пасутся на джайлоо, гуашь" w={1200} h={481} />
+      <Art className="developer__art" src="/img/horses.webp" alt="Лошади пасутся на джайлоо" w={1200} h={481} />
       <div className="developer__text">
         <img className="developer__logo" src="/img/nurzaman.webp" alt="Строительная компания Nurzaman" width="400" height="82" loading="lazy" />
         <h2 id="developer-title">Проект компании Nurzaman</h2>
@@ -510,7 +510,7 @@ function Faq() {
     <section id="faq" className="section wrap faq-sec" aria-labelledby="faq-title">
       <div className="faq-sec__l">
         <Head id="faq" title="Что ещё важно знать" />
-        <Art className="faq-sec__art" src="/img/apples.webp" alt="Ветка яблони с яблоками, гуашь" w={700} h={642} />
+        <Art className="faq-sec__art" src="/img/apples.webp" alt="Ветка яблони с яблоками" w={700} h={642} />
       </div>
       <div className="faq">
         {faq.map(([q, a]) => (
@@ -582,7 +582,7 @@ function Contact({ context, clearContext }: { context?: string; clearContext: ()
     <section id="contact" className="section wrap grid contact" aria-labelledby="contact-title">
       <div className="col-6 contact__l">
         <Head id="contact" kicker="Контакты" title="Обсудим ваш будущий дом" lead="Задайте вопрос о выбранной планировке, условиях покупки или проекте." />
-        <img className="contact__art" src="/img/family.webp" alt="Семья пьёт чай на террасе, вдали горы, гуашь" loading="lazy" width="1200" height="767" />
+        <img className="contact__art" src="/img/family.webp" alt="Семья пьёт чай на террасе, вдали горы" loading="lazy" width="1200" height="767" />
         <dl className="contact__dl">
           <div><dt>Телефон</dt><dd><a href={PHONE_HREF}>{PHONE}</a></dd></div>
           <div><dt>Офис продаж</dt><dd>ул. Арстанбека Дуйшеева, 8, 3 этаж. Пн‑Сб, 9:00‑19:00</dd></div>
@@ -605,7 +605,7 @@ function Banner() {
     <section className="banner" aria-labelledby="banner-title">
       <picture>
         <source media="(max-width: 767px)" srcSet="/img/banner-m.webp" />
-        <img src="/img/banner.webp" alt="Вечернее джайлоо: юрты с дымком, спящие кони и хребет Ала-Тоо, гуашь" width="2000" height="848" loading="lazy" />
+        <img src="/img/banner.webp" alt="Вечернее джайлоо: юрты с дымком, спящие кони и хребет Ала-Тоо" width="2000" height="848" loading="lazy" />
       </picture>
       <div className="wrap banner__text">
         <h2 id="banner-title">Дом у подножия Ала-Тоо</h2>
